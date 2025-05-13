@@ -23,14 +23,11 @@ public class Program {
 		
 		System.out.println("\n===== TEST 2: Seller findByDepartment ======");
 		Department department = new Department(2, null);
-		List<Seller> list = sellerDao.findByDepartment(department);
-		for(Seller s : list) {
-			System.out.println(s);
-		}
+		sellerDao.findByDepartment(department).stream().forEach(System.out::println);;
+		
 
 		System.out.println("\n===== TEST 3: Seller findAll ======");
-		List<Seller> listAll = sellerDao.findAll();
-		listAll.forEach(System.out::println);
+		sellerDao.findAll().stream().forEach(System.out::println);;
 		
 		
 		System.out.println("\n===== TEST 4: Seller Insert ======");
